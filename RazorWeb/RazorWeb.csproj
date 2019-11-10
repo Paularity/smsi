@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\Content\NewFolder\**" />
+    <Content Remove="wwwroot\Content\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\Content\NewFolder\**" />
+    <None Remove="wwwroot\Content\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Content\font-awesome.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\bootstrap.min.css" />
+    <None Include="wwwroot\Content\fonts\segoeui-bold.woff" />
+    <None Include="wwwroot\Content\fonts\SegoeUI-Light.woff" />
+    <None Include="wwwroot\Content\fonts\SegoeUI-Semibold.woff" />
+    <None Include="wwwroot\Content\fonts\SegoeUI-Semilight.woff" />
+    <None Include="wwwroot\Content\fonts\SegoeUI.woff" />
+    <None Include="wwwroot\Content\img\ashkan_shahmir.jpg" />
+    <None Include="wwwroot\Content\img\avatar.jpg" />
+    <None Include="wwwroot\Content\img\chart1.png" />
+    <None Include="wwwroot\Content\img\chart2.jpg" />
+    <None Include="wwwroot\Content\img\chart2.png" />
+    <None Include="wwwroot\Content\img\chart3.jpg" />
+    <None Include="wwwroot\Content\img\chart4.jpg" />
+    <None Include="wwwroot\Content\img\chart5.jpg" />
+    <None Include="wwwroot\Content\img\chart6.jpg" />
+    <None Include="wwwroot\Content\img\chart7.jpg" />
+    <None Include="wwwroot\Content\img\icons\activity.svg" />
+    <None Include="wwwroot\Content\img\icons\analysis.svg" />
+    <None Include="wwwroot\Content\img\icons\checked-blue.svg" />
+    <None Include="wwwroot\Content\img\icons\checked.png" />
+    <None Include="wwwroot\Content\img\icons\checked.svg" />
+    <None Include="wwwroot\Content\img\icons\company.svg" />
+    <None Include="wwwroot\Content\img\icons\dashboard.svg" />
+    <None Include="wwwroot\Content\img\icons\down-arrow-gray.svg" />
+    <None Include="wwwroot\Content\img\icons\down-green.svg" />
+    <None Include="wwwroot\Content\img\icons\down-red.svg" />
+    <None Include="wwwroot\Content\img\icons\factory.svg" />
+    <None Include="wwwroot\Content\img\icons\funnel-1-active.svg" />
+    <None Include="wwwroot\Content\img\icons\funnel-1.svg" />
+    <None Include="wwwroot\Content\img\icons\funnel-blue.svg" />
+    <None Include="wwwroot\Content\img\icons\funnel.svg" />
+    <None Include="wwwroot\Content\img\icons\icons.png" />
+    <None Include="wwwroot\Content\img\icons\key.svg" />
+    <None Include="wwwroot\Content\img\icons\list.svg" />
+    <None Include="wwwroot\Content\img\icons\logout.svg" />
+    <None Include="wwwroot\Content\img\icons\more.svg" />
+    <None Include="wwwroot\Content\img\icons\notification.svg" />
+    <None Include="wwwroot\Content\img\icons\register.svg" />
+    <None Include="wwwroot\Content\img\icons\rep1.svg" />
+    <None Include="wwwroot\Content\img\icons\rep2.svg" />
+    <None Include="wwwroot\Content\img\icons\rep3.svg" />
+    <None Include="wwwroot\Content\img\icons\rep4.svg" />
+    <None Include="wwwroot\Content\img\icons\rep5.svg" />
+    <None Include="wwwroot\Content\img\icons\rep6.svg" />
+    <None Include="wwwroot\Content\img\icons\rep7.svg" />
+    <None Include="wwwroot\Content\img\icons\rep8.svg" />
+    <None Include="wwwroot\Content\img\icons\settings-1.svg" />
+    <None Include="wwwroot\Content\img\icons\settings.svg" />
+    <None Include="wwwroot\Content\img\icons\shutdown.svg" />
+    <None Include="wwwroot\Content\img\icons\sort-down.svg" />
+    <None Include="wwwroot\Content\img\icons\straight-line.svg" />
+    <None Include="wwwroot\Content\img\icons\symbol-2.png" />
+    <None Include="wwwroot\Content\img\icons\symbol.png" />
+    <None Include="wwwroot\Content\img\icons\up-green.svg" />
+    <None Include="wwwroot\Content\img\icons\up-red.svg" />
+    <None Include="wwwroot\Content\img\icons\wtf.svg" />
+    <None Include="wwwroot\Content\img\img-default.png" />
+    <None Include="wwwroot\Content\img\logo.png" />
+    <None Include="wwwroot\Content\Site.css" />
+    <None Include="wwwroot\Content\style.css" />
+  </ItemGroup>
+
+</Project>

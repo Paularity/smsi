@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.274 84.226">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #707070;
+      }
+    </style>
+  </defs>
+  <g id="view-list-button" transform="translate(0 -38.25)">
+    <g id="view-list" transform="translate(0 38.25)">
+      <path id="Path_1237" data-name="Path 1237" class="cls-1" d="M0,92.4H24.064V68.331H0Zm0,30.081H24.064V98.411H0ZM0,62.314H24.064V38.25H0ZM30.081,92.4h72.193V68.331H30.081Zm0,30.081h72.193V98.411H30.081Zm0-84.226V62.314h72.193V38.25Z" transform="translate(0 -38.25)"/>
+    </g>
+  </g>
+</svg>

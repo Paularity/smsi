@@ -1,0 +1,43 @@
+﻿@font-face {
+    font-family: 'SegoeUI';
+    src: local('Segoe UI');
+    src: url(/Content/font-awesome-4.7.0/fonts/fontawesome-webfont.woff) format("woff");
+    font-weight: bolder;
+    font-style: normal
+}
+
+.left-pane .menu-item{
+    padding-left: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.left-pane .user-info .avatar{
+    margin: 0 0 0 10px;
+}
+
+span.sidebar-menu-title{
+    display: none;
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+button span.sidebar-menu-title.dropdown-menu-title::after{
+    content: " \f078";
+}
+
+.sidebar-show{
+    width: 300px;
+}
+
+.sidemenu-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.btn-block:hover {
+    cursor: pointer !important;
+    background-color: #2a2e3a !important;
+}

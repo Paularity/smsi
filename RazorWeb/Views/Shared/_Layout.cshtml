@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RazorWeb</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="stylesheet" href="~/Content/style.css" />
+
+    <!-- Chan's code: Font Awesome Icon 4.7.0 -->
+    <link rel="stylesheet" href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <!-- Chan's code: Individual Styles -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<!-- temporary remove padding for now for better layout -->
+<body style="padding: 0;">
+
+    <!-- This block is for navigation of pages -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RazorWeb</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- This is Mark's default style of navbar -->
+    <div class="resp-full-height" ng-controller="ui.controller as ui">
+        <div class="left-pane" id="sidebar">
+
+            <!-- TOGGLE MENU -->
+            <!-- Chan's toggle -->
+            <a class="menu-item h4 m-0" onclick="toggleSidebar();">
+                <i class="fa fa-bars text-light m-0 p-0"></i>
+            </a>
+
+            <!-- USER MENU ITEM -->
+            <div class="user-info">
+                <div class="avatar">
+                    <img src="~/Content/img/img-default.png" />
+                </div>
+                <a ng-if="ui.IsAuthenticate" class="text-overflow"><span class="user-name" title="{{ui.userContext.username}}" ng-bind="ui.userContext.username"></span></a>
+                <div class="menu-item has-sub">
+                    <span class="badge">{{ui.userNotifications.OverdueCount}}</span>
+                    <i class="icon icon-notification"></i>
+
+                    <!-- Chan Code: add menu title for each sidebar icon -->
+                    <span class="sidebar-menu-title">Overdue Shutdowns</span>
+
+                    <div class="menu-text notification-menu">
+                        <span class="sub-title">
+                            Overdue Shutdows
+                        </span>
+                        <a style="cursor:pointer;" class="menu-sub-item" ng-repeat="shutdown in ui.userNotifications.Shutdowns" ng-click="ui.ShowShutdownActions(shutdown,'Overdue')">
+                            {{shutdown.ShutdownName}} ({{shutdown.ShutdownCode}})
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DASHBOARD MENU ITEM -->
+            <div class="card menu bg-transparent border-0">
+                <div class="card-header bg-transparent border-0" id="dashboard">
+                    <button ng-click="ui.GoToDashboard()" ng-if="ui.IsAuthenticate" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                        <i class="sidemenu-icon icon icon-dashboard"></i>
+                        <!-- Chan Code: add menu title for each sidebar icon -->
+                        <span class="sidebar-menu-title">Dashboard</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- SHUTDOWN MENU ITEM -->
+            <div class="card menu bg-transparent border-0">
+                <div class="card-header bg-transparent border-0" id="dashboard">
+                    <button ng-click="ui.GoToShutdown()" ng-if="ui.IsAuthenticate" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                        <i class="sidemenu-icon icon icon-shutdown"></i>
+                        <!-- Chan Code: add menu title for each sidebar icon -->
+                        <span class="sidebar-menu-title">Shutdown</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reports MENU ITEM -->
+            <div class="card menu bg-transparent border-0">
+                <div class="card-header bg-transparent border-0" id="dashboard">
+                    <button onclick="location.href='/Home/Report'" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                        <i class="sidemenu-icon icon icon-report"></i>
+                        <!-- Chan Code: add menu title for each sidebar icon -->
+                        <span class="sidebar-menu-title">Reports</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Change Password MENU ITEM -->
+            <div class="card menu bg-transparent border-0">
+                <div class="card-header bg-transparent border-0" id="dashboard">
+                    <button data-toggle="modal" data-target="#ChangePassword" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                        <i class="sidemenu-icon icon icon-password"></i>
+                        <!-- Chan Code: add menu title for each sidebar icon -->
+                        <span class="sidebar-menu-title">Change Password</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- COMPANY SETTINGS MENU ITEM -->
+            <div class="card menu bg-transparent border-0">
+                <div class="card-header bg-transparent border-0" id="company-settings">
+                    <button class="btn-block collapsed text-left bg-transparent border-0 d-flex align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="sidemenu-icon icon icon-setting"></i>
+                        <!-- Chan Code: add menu title for each sidebar icon -->
+                        <span class="sidebar-menu-title dropdown-menu-title">Company Settings</span>
+                    </button>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#sidebar">
+                    <div class="card-body">
+                        <div class="card menu bg-transparent border-0">
+                            <div class="card-header bg-transparent border-0 p-0" id="dashboard">
+                                <button ng-click="ui.GotoRegister()" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                                    <i class="sidemenu-icon icon icon-register"></i>
+                                    <!-- Chan Code: add menu title for each sidebar icon -->
+                                    <span class="sidebar-menu-title">User Register</span>
+                                </button>
+                            </div>
+                            <div class="card-header bg-transparent border-0 p-0" id="dashboard">
+                                <button ng-click="ui.GoToCompanySites()" ng-if="ui.IsAuthenticate" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                                    <i class="sidemenu-icon icon icon-companysite"></i>
+                                    <!-- Chan Code: add menu title for each sidebar icon -->
+                                    <span class="sidebar-menu-title">Company Site</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPANY SETTINGS MENU ITEM -->
+            <div class="card menu bg-transparent border-0">
+                <div class="card-header bg-transparent border-0" id="system-settings">
+                    <button class="btn-block collapsed text-left bg-transparent border-0 d-flex align-items-center" data-toggle="collapse" data-target="#system-settings-collapse" aria-expanded="false" aria-controls="system-settings-collapse">
+                        <i class="sidemenu-icon icon icon-setting-1"></i>
+                        <!-- Chan Code: add menu title for each sidebar icon -->
+                        <span class="sidebar-menu-title dropdown-menu-title">System Settings</span>
+                    </button>
+                </div>
+                <div id="system-settings-collapse" class="collapse" aria-labelledby="system-settings-collapse" data-parent="#sidebar">
+                    <div class="card-body">
+                        <div class="card menu bg-transparent border-0">
+                            <div class="card-header bg-transparent border-0 p-0" id="dashboard">
+                                <button ng-click="ui.GoToCompanies()" ng-if="ui.IsAuthenticate" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                                    <i class="sidemenu-icon icon icon-company"></i>
+                                    <!-- Chan Code: add menu title for each sidebar icon -->
+                                    <span class="sidebar-menu-title">Company</span>
+                                </button>
+                            </div>
+                            <div class="card-header bg-transparent border-0 p-0" id="dashboard">
+                                <button ng-click="ui.GoToDiscipline()" ng-if="ui.IsAuthenticate" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                                    <i class="sidemenu-icon icon icon-disipline"></i>
+                                    <!-- Chan Code: add menu title for each sidebar icon -->
+                                    <span class="sidebar-menu-title">Discipline</span>
+                                </button>
+                            </div>
+                            <div class="card-header bg-transparent border-0 p-0" id="dashboard">
+                                <button ng-click="ui.GoToMilestone()" ng-if="ui.IsAuthenticate" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                                    <i class="sidemenu-icon icon icon-milestone"></i>
+                                    <!-- Chan Code: add menu title for each sidebar icon -->
+                                    <span class="sidebar-menu-title">Milestone</span>
+                                </button>
+                            </div>
+                            <div class="card-header bg-transparent border-0 p-0" id="dashboard">
+                                <button ng-click="ui.GoToActivity()" ng-if="ui.IsAuthenticate" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                                    <i class="sidemenu-icon icon icon-activity"></i>
+                                    <!-- Chan Code: add menu title for each sidebar icon -->
+                                    <span class="sidebar-menu-title">Activity</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sign out MENU ITEM -->
+            <div class="card menu bg-transparent border-0">
+                <div class="card-header bg-transparent border-0" id="dashboard">
+                    <button ng-if="ui.IsAuthenticate" href="#" ng-click="ui.LogOut();" class="btn-block text-left bg-transparent border-0 d-flex align-items-center">
+                        <i class="sidemenu-icon icon icon-logout"></i>
+                        <!-- Chan Code: add menu title for each sidebar icon -->
+                        <span class="sidebar-menu-title">Sign out</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mark's Code-->
+            <br />
+            <br />
+            <div style="color:white" class="rotate-text">
+                <span ng-bind="ui.CurrentDate"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- View Contents Here -->
+    <div class="content do-nicescrol">
+        @RenderBody()
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - RazorWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- this is chan's scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

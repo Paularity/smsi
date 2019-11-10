@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.454 87.288">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #010002;
+      }
+    </style>
+  </defs>
+  <g id="magnifying-glass-finder" transform="translate(0 -0.377)">
+    <g id="Group_317" data-name="Group 317" transform="translate(0 0.377)">
+      <path id="Path_1223" data-name="Path 1223" class="cls-1" d="M25.577,9.373a4.624,4.624,0,1,0,0,9.249,14.552,14.552,0,0,1,13.174,8.243,4.625,4.625,0,0,0,8.314-4.056A23.744,23.744,0,0,0,25.577,9.373Z" transform="translate(11.431 4.531)"/>
+      <path id="Path_1224" data-name="Path 1224" class="cls-1" d="M86.761,77.8,71.35,62.386a39.5,39.5,0,1,0-8.008,8.343L78.585,85.971A5.78,5.78,0,1,0,86.761,77.8ZM9.252,39.69A30.027,30.027,0,1,1,39.313,69.752,30.1,30.1,0,0,1,9.252,39.69Z" transform="translate(0 -0.377)"/>
+    </g>
+  </g>
+</svg>
