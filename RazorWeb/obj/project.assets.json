@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Christian\\.nuget\\packages\\": {}
+    "C:\\Users\\axcd\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Christian\\source\\repos\\RazorWeb\\RazorWeb\\RazorWeb.csproj",
+      "projectUniqueName": "C:\\Users\\axcd\\Source\\Repos\\smsi2\\RazorWeb\\RazorWeb.csproj",
       "projectName": "RazorWeb",
-      "projectPath": "C:\\Users\\Christian\\source\\repos\\RazorWeb\\RazorWeb\\RazorWeb.csproj",
-      "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Christian\\source\\repos\\RazorWeb\\RazorWeb\\obj\\",
+      "projectPath": "C:\\Users\\axcd\\Source\\Repos\\smsi2\\RazorWeb\\RazorWeb.csproj",
+      "packagesPath": "C:\\Users\\axcd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\axcd\\Source\\Repos\\smsi2\\RazorWeb\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Christian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\axcd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
