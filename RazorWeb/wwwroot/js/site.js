@@ -9,12 +9,13 @@ function toggleSidebar()
         .css({ transition: '.5s' })
         .toggleClass('sidebar-show', 300);
 
-    //toggle title of each menu item
     if ($('#sidebar').hasClass('sidebar-show')) {
-        $('span.sidebar-menu-title').css({display: 'inline-block'});
+        setTimeout(function () {
+            //toggle title of each menu item        
+            $('span.sidebar-menu-title').css({display: 'inline-block' });
+        }, 200);
     }
-    else
-    {
-        $('span.sidebar-menu-title').css({ display: 'none' });  
+    else {
+        $('span.sidebar-menu-title').css({display: 'none'});
     }
 }

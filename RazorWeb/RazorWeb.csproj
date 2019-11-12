@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Content.rar" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\Content\bootstrap.min.css" />
     <None Include="wwwroot\Content\fonts\segoeui-bold.woff" />
     <None Include="wwwroot\Content\fonts\SegoeUI-Light.woff" />
