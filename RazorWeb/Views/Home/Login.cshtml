@@ -5,20 +5,27 @@
 <div ng-controller="login.controller as l" class="login-page middle-it container-fluid">
     <div class="row justify-content-center">
         <div class="col-lg-4 col-md-6">
-            <img src="~/Content/img/logo.png" alt="smsi project" class="logo" />
-            <h1>
-                <small>Welcome to SMSi</small>
-                Login to your account
-            </h1>
-            <form role="form">
-                <input type="text" autofocus class="form-input" placeholder="Username"
-                        ng-model="l.entity.Username" />
-                <input type="password"
-                        class="form-input" placeholder="Password"
-                        ng-model="l.entity.Password" />
-                <input type="submit" value="Login" class="btn-submit"
-                        ng-click="l.Login()" />
-            </form>
+        <div class="card" style="box-shadow: 5px 5px 10px #b4b4b4; border-radius: 5px;">
+            <div class="card-header display-4 text-center" style="padding: 20px;">
+                <img src="~/Content/img/logo.png" alt="smsi project" class="logo" />
+            </div>
+            <div class="card-body" style="padding: 20px;">
+                <form role="form">
+                    <input type="text" autofocus class="form-input" placeholder="Username" ng-model="l.entity.Username" style="max-width: 100%;" />
+                    <input type="password" class="form-input" placeholder="Password" ng-model="l.entity.Password" style="max-width: 100%;" />
+                    <button type="submit" value="Login" class="btn-submit p-2" ng-click="l.Login()" style="max-width: 100%;">
+                        Login                        
+                    </button>
+                </form>
+            </div>
+        </div>
+            <!--
+                <img src="~/Content/img/logo.png" alt="smsi project" class="logo" />
+                <h1>
+                    <small>Welcome to SMSi</small>
+                    Login to your account
+                </h1>
+            -->            
         </div>
     </div>
 </div>
