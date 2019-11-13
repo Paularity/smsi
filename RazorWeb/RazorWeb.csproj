@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\Content\font-awesome.min.css" />
+    <Content Remove="wwwroot\Content\img\fingerprint.svg" />
   </ItemGroup>
 
   <ItemGroup>

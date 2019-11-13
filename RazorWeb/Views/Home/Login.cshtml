@@ -4,17 +4,17 @@
 
 <div ng-controller="login.controller as l" class="login-page middle-it container-fluid">
     <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6">
-        <div class="card" style="box-shadow: 5px 5px 10px #b4b4b4; border-radius: 5px;">
-            <div class="card-header" style="padding: 20px;">
-                <img src="~/Content/img/logo.png" alt="smsi project" class="logo" />
-            </div>
+        <div class="col-lg-3 col-md-6">
+        <div class="card" style="border:none; background: transparent;">
+            <!--div class="card-header" style="padding: 20px; background: transparent; border: none;">
+                <img src="~/Content/img/smsi_logo.png" alt="smsi project" class="logo" />
+            </div-->
             <div class="card-body" style="padding: 20px;">
                 <form role="form">
-                    <input type="text" autofocus class="form-input text-center" placeholder="Username" ng-model="l.entity.Username" style="max-width: 100%;" />
-                    <input type="password" class="form-input text-center" placeholder="Password" ng-model="l.entity.Password" style="max-width: 100%;" />
-                    <button type="submit" value="Login" class="btn-submit p-2" ng-click="l.Login()" style="max-width: 100%;">
-                        Login                        
+                    <input type="text" autofocus class="form-input text-center" placeholder="Username" ng-model="l.entity.Username" style="max-width: 100%; border-bottom: 1px solid #808080; border-radius: 0; background: transparent; box-shadow: none;" />
+                    <input type="password" class="form-input text-center" placeholder="Password" ng-model="l.entity.Password" style="max-width: 100%; border-bottom: 1px solid #808080; border-radius: 0; background: transparent; box-shadow: none;" />
+                    <button type="submit" value="Login" class="btn-submit px-3" ng-click="l.Login()" style="max-width: 100%; background: transparent;">                                     
+                        <span><img style="width: 100px;" src="~/Content/img/icons/fingerprint .svg" ></span>
                     </button>
                 </form>
             </div>
